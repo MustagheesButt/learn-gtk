@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.12.1 -->
+<interface>
+  <!-- interface-name main.ui -->
+  <requires lib="gtk" version="4.10"/>
+  <object class="GtkWindow" id="main_window">
+    <property name="default-height">600</property>
+    <property name="default-width">800</property>
+    <property name="title">sVLC</property>
+    <property name="titlebar">
+      <object class="GtkHeaderBar" id="titlebar"/>
+    </property>
+    <child>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkButton" id="btn1">
+            <property name="label">hello world</property>
+            <property name="margin-bottom">5</property>
+            <property name="margin-end">5</property>
+            <property name="margin-start">5</property>
+            <property name="margin-top">5</property>
+            <property name="valign">center</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
