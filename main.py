@@ -30,27 +30,37 @@ class MyApp(Adw.Application):
         self.add_media_to_grid(grid, media_files)
 
     def get_media_files(self):
-        #exts = [".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", \
-        #                ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg", \
-        #                ".rm", ".swf", ".vob", ".wmv"]
-        exts = [".mkv"]
+        dirs = ["/Users/mustaghees/Movies", "/Users/mustaghees/Projects"]
+        exts = [".3g2", ".3gp", ".asf", ".asx", ".avi", ".flv", \
+                       ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg", \
+                       ".rm", ".swf", ".vob", ".wmv"]
+        # exts = [".mkv"]
         found = []
-        for root, dirs, files in os.walk("/home"):
-            for file in files:
-                if file.endswith(tuple(exts)):
-                    found.append(os.path.join(root, file))
+
+        for dir in dirs:
+            for root, dirs, files in os.walk(dir):
+                for file in files:
+                    if file.endswith(tuple(exts)):
+                        found.append(os.path.join(root, file))
 
         return found
 
     def add_media_to_grid(self, grid, files):
-        for i in range(len(files[:3])):
+        for i in range(len(files)):
             file = files[i]
             col = i % 3
             row = int(i / 3)
-            print(col, row)
 
-            btn = Gtk.Button(label=file)
-            grid.attach(btn, col * 400, row, 100, 100)
+            # w = self.win.get_size(Gtk.Orientation.HORIZONTAL)
+            w = self.win.get_width()
+            h = self.win.get_size(Gtk.Orientation.VERTICAL)
+            print(w, h)
+            # print(h)
+
+            media = Gtk.MediaFile.new_for_filename(file)
+            video = Gtk.Video.new_for_media_stream(media)
+            # btn = Gtk.Button(label=file)
+            grid.attach(video, col * 300, row * 100, 300, 100)
 
 app = MyApp(application_id="com.example.GtkApplication")
 
