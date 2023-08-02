@@ -11,18 +11,7 @@
       <object class="GtkHeaderBar" id="titlebar"/>
     </property>
     <child>
-      <object class="GtkBox">
-        <child>
-          <object class="GtkButton" id="btn1">
-            <property name="label">hello world</property>
-            <property name="margin-bottom">5</property>
-            <property name="margin-end">5</property>
-            <property name="margin-start">5</property>
-            <property name="margin-top">5</property>
-            <property name="valign">center</property>
-          </object>
-        </child>
-      </object>
+      <object class="GtkGrid" id="grid1"/>
     </child>
   </object>
 </interface>
