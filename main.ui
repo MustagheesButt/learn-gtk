@@ -108,6 +108,7 @@
               <object class="GtkStackPage" id="sp4">
                 <property name="child">
                   <object class="GtkGrid" id="g4">
+                    <property name="css-classes">custom-css</property>
                     <property name="name">About</property>
                     <child>
                       <object class="GtkLabel">

@@ -3,7 +3,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk, Adw, Gio, Gdk
 import os
 import pathlib
 
@@ -29,6 +29,12 @@ class MyApp(Adw.Application):
         )  # Application will close once it no longer has active windows attached to it
         self.win.present()
 
+        # Apply styles
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_file(Gio.File.new_for_path('main.css'))
+        Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        # Other stuff
         media_files = self.get_media_files()
         self.add_media_to_grid(grid, media_files)
 

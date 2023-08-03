@@ -7,12 +7,6 @@
   <ui_library>
 	(2,"gtk","4.10",None)
   </ui_library>
-  <css>
-	(1,"main.css",None,1)
-  </css>
-  <css_ui>
-	(1,2)
-  </css_ui>
   <object>
 	(2,1,"GtkWindow","main_window",None,None,None,None,None,None),
 	(2,2,"GtkHeaderBar","titlebar",1,None,None,None,None,None),
@@ -67,6 +61,7 @@
 	(2,14,"GtkStackPage","child",None,None,None,None,None,15,None,None,None,None),
 	(2,14,"GtkStackPage","name","about",None,None,None,None,None,None,None,None,None),
 	(2,14,"GtkStackPage","title","About",None,None,None,None,None,None,None,None,None),
+	(2,15,"GtkWidget","css-classes","green",None,None,None,None,None,None,None,None,None),
 	(2,15,"GtkWidget","name","About",None,None,None,None,None,None,None,None,None),
 	(2,16,"GtkButton","label","A Button",None,None,None,None,None,None,None,None,None),
 	(2,16,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
