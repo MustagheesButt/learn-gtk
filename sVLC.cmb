@@ -7,6 +7,12 @@
   <ui_library>
 	(2,"gtk","4.10",None)
   </ui_library>
+  <css>
+	(1,"main.css",None,1)
+  </css>
+  <css_ui>
+	(1,2)
+  </css_ui>
   <object>
 	(2,1,"GtkWindow","main_window",None,None,None,None,None,None),
 	(2,2,"GtkHeaderBar","titlebar",1,None,None,None,None,None),
@@ -21,7 +27,15 @@
 	(2,12,"GtkStackPage","sp3",6,None,None,None,2,None),
 	(2,13,"GtkGrid","g3",12,None,None,None,None,None),
 	(2,14,"GtkStackPage","sp4",6,None,None,None,3,None),
-	(2,15,"GtkGrid","g4",14,None,None,None,None,None)
+	(2,15,"GtkGrid","g4",14,None,None,None,None,None),
+	(2,16,"GtkButton","btn1",8,None,None,None,1,None),
+	(2,17,"GtkButton","btn2",8,None,None,None,2,None),
+	(2,18,"(external)","6",None,None,None,None,None,None),
+	(2,19,"GtkBox",None,17,None,None,None,None,None),
+	(2,21,"GtkLabel",None,19,None,None,None,1,None),
+	(2,22,"GtkImage",None,19,None,None,None,None,None),
+	(2,23,"GtkLabel",None,15,None,None,None,None,None),
+	(2,24,"GtkLabel",None,15,None,None,None,1,None)
   </object>
   <object_property>
 	(2,1,"GtkWindow","default-height","600",None,None,None,None,None,None,None,None,None),
@@ -35,9 +49,13 @@
 	(2,7,"GtkStackPage","child",None,None,None,None,None,8,None,None,None,None),
 	(2,7,"GtkStackPage","name","main",None,None,None,None,None,None,None,None,None),
 	(2,7,"GtkStackPage","title","Main",None,None,None,None,None,None,None,None,None),
+	(2,8,"GtkGrid","column-spacing","10",None,None,None,None,None,None,None,None,None),
+	(2,8,"GtkWidget","margin-start","10",None,None,None,None,None,None,None,None,None),
+	(2,8,"GtkWidget","margin-top","10",None,None,None,None,None,None,None,None,None),
 	(2,8,"GtkWidget","name","Main",None,None,None,None,None,None,None,None,None),
 	(2,9,"GtkLabel","label","Hello world",None,None,None,None,None,None,None,None,None),
 	(2,9,"GtkLabel","selectable","True",None,None,None,None,None,None,None,None,None),
+	(2,9,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
 	(2,10,"GtkStackPage","child",None,None,None,None,None,11,None,None,None,None),
 	(2,10,"GtkStackPage","name","videos",None,None,None,None,None,None,None,None,None),
 	(2,10,"GtkStackPage","title","Videos",None,None,None,None,None,None,None,None,None),
@@ -49,10 +67,28 @@
 	(2,14,"GtkStackPage","child",None,None,None,None,None,15,None,None,None,None),
 	(2,14,"GtkStackPage","name","about",None,None,None,None,None,None,None,None,None),
 	(2,14,"GtkStackPage","title","About",None,None,None,None,None,None,None,None,None),
-	(2,15,"GtkWidget","name","About",None,None,None,None,None,None,None,None,None)
+	(2,15,"GtkWidget","name","About",None,None,None,None,None,None,None,None,None),
+	(2,16,"GtkButton","label","A Button",None,None,None,None,None,None,None,None,None),
+	(2,16,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
+	(2,17,"GtkButton","child",None,None,None,None,None,19,None,None,None,None),
+	(2,17,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
+	(2,19,"GtkBox","spacing","6",None,None,None,None,None,None,None,None,None),
+	(2,21,"GtkLabel","label","Icon Button",None,None,None,None,None,None,None,None,None),
+	(2,22,"GtkImage","icon-name","video-display",None,None,None,None,None,None,None,None,None),
+	(2,22,"GtkImage","pixel-size","26",None,None,None,None,None,None,None,None,None),
+	(2,23,"GtkLabel","label","Demo App",None,None,None,None,None,None,None,None,None),
+	(2,23,"GtkLabel","use-underline","True",None,None,None,None,None,None,None,None,None),
+	(2,23,"GtkWidget","hexpand","True",None,None,None,None,None,None,None,None,None),
+	(2,24,"GtkLabel","label","2023",None,None,None,None,None,None,None,None,None)
   </object_property>
   <object_layout_property>
 	(2,8,9,"GtkGridLayoutChild","column","0",None,None,None,None),
-	(2,8,9,"GtkGridLayoutChild","row","0",None,None,None,None)
+	(2,8,9,"GtkGridLayoutChild","row","0",None,None,None,None),
+	(2,8,16,"GtkGridLayoutChild","column","1",None,None,None,None),
+	(2,8,17,"GtkGridLayoutChild","column","2",None,None,None,None),
+	(2,15,23,"GtkGridLayoutChild","column-span","3",None,None,None,None),
+	(2,15,23,"GtkGridLayoutChild","row-span","2",None,None,None,None),
+	(2,15,24,"GtkGridLayoutChild","column-span","3",None,None,None,None),
+	(2,15,24,"GtkGridLayoutChild","row","2",None,None,None,None)
   </object_layout_property>
 </cambalache-project>

@@ -26,13 +26,52 @@
               <object class="GtkStackPage" id="sp1">
                 <property name="child">
                   <object class="GtkGrid" id="g1">
+                    <property name="column-spacing">10</property>
+                    <property name="margin-start">10</property>
+                    <property name="margin-top">10</property>
                     <property name="name">Main</property>
                     <child>
                       <object class="GtkLabel">
                         <property name="label">Hello world</property>
                         <property name="selectable">True</property>
+                        <property name="valign">center</property>
                         <layout>
                           <property name="column">0</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn1">
+                        <property name="label">A Button</property>
+                        <property name="valign">center</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn2">
+                        <property name="child">
+                          <object class="GtkBox">
+                            <property name="spacing">6</property>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="icon-name">video-display</property>
+                                <property name="pixel-size">26</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Icon Button</property>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                        <property name="valign">center</property>
+                        <layout>
+                          <property name="column">2</property>
                           <property name="row">0</property>
                         </layout>
                       </object>
@@ -70,6 +109,29 @@
                 <property name="child">
                   <object class="GtkGrid" id="g4">
                     <property name="name">About</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="hexpand">True</property>
+                        <property name="label">Demo App</property>
+                        <property name="use-underline">True</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="column-span">3</property>
+                          <property name="row">0</property>
+                          <property name="row-span">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">2023</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="column-span">3</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
                   </object>
                 </property>
                 <property name="name">about</property>
