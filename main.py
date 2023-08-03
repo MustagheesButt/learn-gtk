@@ -20,7 +20,7 @@ class MyApp(Adw.Application):
         # Obtain the button widget and connect it to a function
         # button = builder.get_object("btn1")
         # button.connect("clicked", self.hello)
-        grid = builder.get_object("grid1")
+        grid = builder.get_object("g2")
 
         # Obtain and show the main window
         self.win = builder.get_object("main_window")

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- Created with Cambalache 0.12.1 -->
+<!-- Created with Cambalache 0.13.1 -->
 <interface>
   <!-- interface-name main.ui -->
   <requires lib="gtk" version="4.10"/>
@@ -11,7 +11,74 @@
       <object class="GtkHeaderBar" id="titlebar"/>
     </property>
     <child>
-      <object class="GtkGrid" id="grid1"/>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkStackSidebar" id="side1">
+            <property name="hexpand">True</property>
+            <property name="stack">stk1</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="stk1">
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage" id="sp1">
+                <property name="child">
+                  <object class="GtkGrid" id="g1">
+                    <property name="name">Main</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Hello world</property>
+                        <property name="selectable">True</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="name">main</property>
+                <property name="title">Main</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStackPage" id="sp2">
+                <property name="child">
+                  <object class="GtkGrid" id="g2">
+                    <property name="name">Videos</property>
+                  </object>
+                </property>
+                <property name="name">videos</property>
+                <property name="title">Videos</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStackPage" id="sp3">
+                <property name="child">
+                  <object class="GtkGrid" id="g3">
+                    <property name="name">IDK</property>
+                  </object>
+                </property>
+                <property name="name">random</property>
+                <property name="title">Random</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStackPage" id="sp4">
+                <property name="child">
+                  <object class="GtkGrid" id="g4">
+                    <property name="name">About</property>
+                  </object>
+                </property>
+                <property name="name">about</property>
+                <property name="title">About</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
     </child>
   </object>
 </interface>
