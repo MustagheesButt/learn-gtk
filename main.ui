@@ -14,9 +14,21 @@
     <child>
       <object class="GtkBox">
         <child>
-          <object class="GtkStackSidebar" id="side1">
-            <property name="stack">stk1</property>
-            <property name="width-request">200</property>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkImage">
+                <property name="file">./assets/images/google-logo.png</property>
+                <property name="pixel-size">40</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStackSidebar" id="side1">
+                <property name="stack">stk1</property>
+                <property name="vexpand">True</property>
+                <property name="width-request">200</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>
