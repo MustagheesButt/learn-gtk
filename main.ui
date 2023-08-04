@@ -6,6 +6,7 @@
   <object class="GtkWindow" id="main_window">
     <property name="default-height">600</property>
     <property name="default-width">800</property>
+    <property name="resizable">False</property>
     <property name="title">sVLC</property>
     <property name="titlebar">
       <object class="GtkHeaderBar" id="titlebar"/>
@@ -14,8 +15,8 @@
       <object class="GtkBox">
         <child>
           <object class="GtkStackSidebar" id="side1">
-            <property name="hexpand">True</property>
             <property name="stack">stk1</property>
+            <property name="width-request">200</property>
           </object>
         </child>
         <child>
@@ -161,7 +162,7 @@
               <object class="GtkStackPage" id="sp4">
                 <property name="child">
                   <object class="GtkGrid" id="g4">
-                    <property name="css-classes">green</property>
+                    <property name="css-classes">custom-css</property>
                     <property name="name">About</property>
                     <child>
                       <object class="GtkLabel">
