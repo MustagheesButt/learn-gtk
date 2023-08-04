@@ -143,7 +143,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkBox">
+                      <object class="GtkBox" id="grouped">
                         <property name="orientation">vertical</property>
                         <child>
                           <object class="GtkLabel">
@@ -169,6 +169,35 @@
                         </child>
                         <layout>
                           <property name="column">1</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="ungrouped">
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Checkboxes</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkCheckButton" id="check1">
+                            <property name="label">Opt 1</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkCheckButton" id="check2">
+                            <property name="label">Opt 2</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkCheckButton" id="check3">
+                            <property name="label">Opt 3</property>
+                          </object>
+                        </child>
+                        <layout>
+                          <property name="column">2</property>
                           <property name="row">2</property>
                         </layout>
                       </object>
