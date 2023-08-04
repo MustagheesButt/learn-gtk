@@ -30,6 +30,7 @@
                     <property name="margin-start">10</property>
                     <property name="margin-top">10</property>
                     <property name="name">Main</property>
+                    <property name="row-spacing">10</property>
                     <child>
                       <object class="GtkLabel">
                         <property name="label">Hello world</property>
@@ -76,6 +77,47 @@
                         </layout>
                       </object>
                     </child>
+                    <child>
+                      <object class="GtkTextView" id="input1">
+                        <property name="height-request">26</property>
+                        <property name="input-purpose">email</property>
+                        <property name="pixels-above-lines">6</property>
+                        <property name="pixels-below-lines">6</property>
+                        <property name="valign">center</property>
+                        <property name="width-request">148</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkComboBoxText" id="cmb1">
+                        <property name="valign">center</property>
+                        <items>
+                          <item id="1">Orange</item>
+                          <item id="2">Red</item>
+                          <item id="3">Blue</item>
+                        </items>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTextView" id="input2">
+                        <property name="input-purpose">password</property>
+                        <property name="pixels-above-lines">6</property>
+                        <property name="pixels-below-lines">6</property>
+                        <property name="valign">center</property>
+                        <property name="width-request">148</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
                   </object>
                 </property>
                 <property name="name">main</property>
@@ -108,7 +150,7 @@
               <object class="GtkStackPage" id="sp4">
                 <property name="child">
                   <object class="GtkGrid" id="g4">
-                    <property name="css-classes">custom-css</property>
+                    <property name="css-classes">green</property>
                     <property name="name">About</property>
                     <child>
                       <object class="GtkLabel">
