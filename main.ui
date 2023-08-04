@@ -78,13 +78,8 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkTextView" id="input1">
-                        <property name="height-request">26</property>
-                        <property name="input-purpose">email</property>
-                        <property name="pixels-above-lines">6</property>
-                        <property name="pixels-below-lines">6</property>
+                      <object class="GtkEntry" id="input1">
                         <property name="valign">center</property>
-                        <property name="width-request">148</property>
                         <layout>
                           <property name="column">0</property>
                           <property name="row">1</property>
@@ -106,7 +101,23 @@
                       </object>
                     </child>
                     <child>
+                      <object class="GtkPasswordEntry">
+                        <property name="show-peek-icon">True</property>
+                        <property name="valign">center</property>
+                        <layout>
+                          <property name="column">2</property>
+                          <property name="row">1</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
                       <object class="GtkTextView" id="input2">
+                        <property name="buffer">
+                          <object class="GtkTextBuffer">
+                            <property name="text">&lt;h1&gt;Hello&lt;/h1&gt;</property>
+                          </object>
+                        </property>
+                        <property name="height-request">20</property>
                         <property name="input-purpose">password</property>
                         <property name="pixels-above-lines">6</property>
                         <property name="pixels-below-lines">6</property>
