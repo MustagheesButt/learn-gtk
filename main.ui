@@ -14,7 +14,7 @@
     <child>
       <object class="GtkBox">
         <child>
-          <object class="GtkBox">
+          <object class="GtkBox" id="sidebar_container">
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkImage">
@@ -139,6 +139,46 @@
                         <layout>
                           <property name="column">0</property>
                           <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Grouped Radio Buttons</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkCheckButton" id="opt1">
+                            <property name="label">Opt 1</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkCheckButton" id="opt2">
+                            <property name="group">opt1</property>
+                            <property name="label">Opt 2</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkCheckButton" id="opt3">
+                            <property name="group">opt1</property>
+                            <property name="label">Opt 3</property>
+                          </object>
+                        </child>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">2</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkToggleButton">
+                        <property name="label">Toggle Button</property>
+                        <layout>
+                          <property name="column">1</property>
+                          <property name="row">3</property>
                         </layout>
                       </object>
                     </child>
