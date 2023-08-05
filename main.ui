@@ -203,6 +203,16 @@
                       </object>
                     </child>
                     <child>
+                      <object class="GtkDropDown">
+                        <property name="model">dropdown-data</property>
+                        <property name="valign">center</property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">3</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
                       <object class="GtkToggleButton">
                         <property name="label">Toggle Button</property>
                         <property name="valign">center</property>
@@ -268,7 +278,16 @@
               <object class="GtkStackPage" id="sp3">
                 <property name="child">
                   <object class="GtkGrid" id="g3">
-                    <property name="name">IDK</property>
+                    <child>
+                      <object class="GtkColumnView" id="cv1">
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="column-span">3</property>
+                          <property name="row">0</property>
+                          <property name="row-span">3</property>
+                        </layout>
+                      </object>
+                    </child>
                   </object>
                 </property>
                 <property name="name">random</property>
@@ -314,5 +333,14 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkStringList" id="dropdown-data">
+    <property name="strings">Home
+Subway
+Office</property>
+    <items>
+      <item>Factory</item>
+      <item>Ruins</item>
+    </items>
   </object>
 </interface>
