@@ -7,6 +7,8 @@ from gi.repository import Gtk, Adw, Gio, Gdk, GObject
 import os
 import pathlib
 
+from helpers import Country, get_media_files, add_media_to_grid
+
 
 class MyApp(Adw.Application):
     def __init__(self, **kwargs):
@@ -35,57 +37,11 @@ class MyApp(Adw.Application):
 
         # Other stuff
         grid = builder.get_object("g2")
-        media_files = self.get_media_files()
-        self.add_media_to_grid(grid, media_files)
+        media_files = get_media_files()
+        add_media_to_grid(grid, media_files)
 
         colview = builder.get_object("cv1")
         self.initialize_list(colview)
-
-    def get_media_files(self):
-        dirs = ["/Users/mustaghees/Movies", "/Users/mustaghees/Projects"]
-        exts = [
-            ".3g2",
-            ".3gp",
-            ".asf",
-            ".asx",
-            ".avi",
-            ".flv",
-            ".m2ts",
-            ".mkv",
-            ".mov",
-            ".mp4",
-            ".mpg",
-            ".mpeg",
-            ".rm",
-            ".swf",
-            ".vob",
-            ".wmv",
-        ]
-        # exts = [".mkv"]
-        found = []
-
-        for dir in dirs:
-            for root, dirs, files in os.walk(dir):
-                for file in files:
-                    if file.endswith(tuple(exts)):
-                        found.append(os.path.join(root, file))
-
-        return found
-
-    def add_media_to_grid(self, grid, files):
-        for i in range(len(files)):
-            file = files[i]
-            x = i % 3
-            y = int(i / 3)
-
-            media = Gtk.MediaFile.new_for_filename(file)
-            video = Gtk.Video.new_for_media_stream(media)
-            video.set_autoplay(True)
-            video.set_hexpand(True)
-            video.set_vexpand(True)
-
-            # btn = Gtk.Button(label=file)
-            grid.attach(video, x, y, 1, 1)
     
     # For tree view (now ColumnView)
     # https://discourse.gnome.org/t/gtk4-gtk-listview-python-example/12323
@@ -149,32 +105,6 @@ class MyApp(Adw.Application):
     def _on_selected_item_notify(self, dropdown, _):
         country = dropdown.get_selected_item()
         print(f"Selected item: {country}")
-
-
-class Country(GObject.Object):
-    __gtype_name__ = "Country"
-
-    def __init__(self, country_id, country_name, pm):
-        super().__init__()
-
-        self._country_id = country_id
-        self._country_name = country_name
-        self._country_pm = pm
-
-    @GObject.Property(type=str)
-    def country_id(self):
-        return self._country_id
-
-    @GObject.Property(type=str)
-    def country_name(self):
-        return self._country_name
-
-    @GObject.Property(type=str)
-    def country_pm(self):
-        return self._country_pm
-
-    def __repr__(self):
-        return f"Country(country_id={self.country_id}, country_name={self.country_name})"
 
 
 app = MyApp(application_id="com.example.GtkApplication")
