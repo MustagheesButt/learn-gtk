@@ -2,36 +2,36 @@ from gi.repository import GObject, Gtk
 import os
 
 
-class Country(GObject.Object):
+class FileNode(GObject.Object):
     __gtype_name__ = "Country"
 
-    def __init__(self, country_id, country_name, pm, tag):
+    def __init__(self, id, name, size, is_folder):
         super().__init__()
 
-        self._country_id = country_id
-        self._country_name = country_name
-        self._country_pm = pm
-        self._country_tag = tag
+        self._id = id
+        self._name = name
+        self._size = size
+        self._is_folder = is_folder
 
     @GObject.Property(type=str)
-    def country_id(self):
-        return self._country_id
+    def id(self):
+        return self._id
 
     @GObject.Property(type=str)
-    def country_name(self):
-        return self._country_name
+    def name(self):
+        return self._name
 
     @GObject.Property(type=str)
-    def country_pm(self):
-        return self._country_pm
+    def size(self):
+        return self._size
     
-    @GObject.Property(type=str)
-    def country_tag(self):
-        return self._country_tag
+    @GObject.Property(type=bool, default=False)
+    def is_folder(self):
+        return self._is_folder
 
     def __repr__(self):
         return (
-            f"Country(country_id={self.country_id}, country_name={self.country_name})"
+            f"FileNode(id={self.id}, name={self.name})"
         )
 
 
@@ -58,11 +58,11 @@ def get_media_files():
     # exts = [".mkv"]
     found = []
 
-    for dir in dirs:
-        for root, dirs, files in os.walk(dir):
-            for file in files:
-                if file.endswith(tuple(exts)):
-                    found.append(os.path.join(root, file))
+    # for dir in dirs:
+    #     for root, dirs, files in os.walk(dir):
+    #         for file in files:
+    #             if file.endswith(tuple(exts)):
+    #                 found.append(os.path.join(root, file))
 
     return found
 

@@ -284,13 +284,13 @@
                         <child>
                           <object class="GtkColumnViewColumn" id="colv-col1">
                             <property name="expand">True</property>
-                            <property name="title">Country</property>
+                            <property name="title">Filename</property>
                           </object>
                         </child>
                         <child>
                           <object class="GtkColumnViewColumn" id="colv-col2">
                             <property name="expand">True</property>
-                            <property name="title">Head of State</property>
+                            <property name="title">Size</property>
                           </object>
                         </child>
                         <child>

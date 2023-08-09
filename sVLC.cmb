@@ -152,9 +152,9 @@
 	(2,56,"GtkStringList","strings","Home\nSubway\nOffice",None,None,None,None,None,None,None,None,None),
 	(2,57,"GtkColumnView","enable-rubberband","True",None,None,None,None,None,None,None,None,None),
 	(2,58,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),
-	(2,58,"GtkColumnViewColumn","title","Country",None,None,None,None,None,None,None,None,None),
+	(2,58,"GtkColumnViewColumn","title","Filename",None,None,None,None,None,None,None,None,None),
 	(2,62,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),
-	(2,62,"GtkColumnViewColumn","title","Head of State",None,None,None,None,None,None,None,None,None),
+	(2,62,"GtkColumnViewColumn","title","Size",None,None,None,None,None,None,None,None,None),
 	(2,65,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),
 	(2,65,"GtkColumnViewColumn","title","Tags",None,None,None,None,None,None,None,None,None)
   </object_property>
