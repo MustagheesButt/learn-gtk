@@ -281,6 +281,7 @@
                     <child>
                       <object class="GtkColumnView" id="cv1">
                         <property name="enable-rubberband">True</property>
+                        <property name="hexpand">True</property>
                         <child>
                           <object class="GtkColumnViewColumn" id="colv-col1">
                             <property name="expand">True</property>

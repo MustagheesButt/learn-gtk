@@ -151,6 +151,7 @@
 	(2,55,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
 	(2,56,"GtkStringList","strings","Home\nSubway\nOffice",None,None,None,None,None,None,None,None,None),
 	(2,57,"GtkColumnView","enable-rubberband","True",None,None,None,None,None,None,None,None,None),
+	(2,57,"GtkWidget","hexpand","True",None,None,None,None,None,None,None,None,None),
 	(2,58,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),
 	(2,58,"GtkColumnViewColumn","title","Filename",None,None,None,None,None,None,None,None,None),
 	(2,62,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),

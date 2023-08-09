@@ -6,8 +6,11 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, Gio, Gdk, GObject
 import os
 import pathlib
+import pprint
 
 from helpers import FileNode, get_media_files, add_media_to_grid
+
+pp = pprint.PrettyPrinter(indent=4)
 
 
 class MyApp(Adw.Application):
@@ -67,7 +70,7 @@ class MyApp(Adw.Application):
 
         # https://docs.gtk.org/gtk4/callback.TreeListModelCreateModelFunc.html
         def child_model(item, user_data):
-            if item.is_folder:
+            if not item.is_folder:
                 return None
             return Gio.ListStore(item_type=FileNode)
 
@@ -80,13 +83,13 @@ class MyApp(Adw.Application):
         )
 
         factory = Gtk.SignalListItemFactory()
-        factory.connect("setup", self._on_factory_setup)
+        factory.connect("setup", self._on_factory_setup, "name")
         factory.connect("bind", self._on_factory_bind, "name")
         factory.connect("unbind", self._on_factory_unbind, "name")
         factory.connect("teardown", self._on_factory_teardown)
 
         factory2 = Gtk.SignalListItemFactory()
-        factory2.connect("setup", self._on_factory_setup)
+        factory2.connect("setup", self._on_factory_setup, "size")
         factory2.connect("bind", self._on_factory_bind, "size")
         factory2.connect("unbind", self._on_factory_unbind, "size")
         factory2.connect("teardown", self._on_factory_teardown)
@@ -112,22 +115,29 @@ class MyApp(Adw.Application):
         columnview.props.hexpand = True
         columnview.props.vexpand = True
 
-    def _on_factory_setup(self, factory, list_item):
+    def _on_factory_setup(self, factory, list_item, what):
         cell = Gtk.Inscription()
         cell._binding = None
-        expander = Gtk.TreeExpander()
-        expander.set_child(cell)
-        list_item.set_child(expander)
+        if what == "name":
+            expander = Gtk.TreeExpander()
+            expander.set_child(cell)
+            cell = expander
+        list_item.set_child(cell)
 
     def _on_factory_bind(self, factory, list_item, what):
-        expander = list_item.get_child()
-        cell = expander.get_child()
+        cell = list_item.get_child()
+        if what == "name":
+            cell = cell.get_child()
+
         item = list_item.get_item()
         while isinstance(item, Gtk.TreeListRow):
             item = item.get_item()
         cell._binding = item.bind_property(what, cell, "text", GObject.BindingFlags.SYNC_CREATE)
+        cell.set_hexpand(True)
 
-        expander.set_list_row(list_item.get_item())
+        if what == "name":
+            expander = list_item.get_child()
+            expander.set_list_row(list_item.get_item())
 
     def _on_factory_unbind(self, factory, list_item, what):
         cell = list_item.get_child()
