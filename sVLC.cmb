@@ -56,7 +56,18 @@
 	(2,53,"GtkLabel",None,50,None,None,None,None,None),
 	(2,55,"GtkDropDown",None,8,None,None,None,9,None),
 	(2,56,"GtkStringList","dropdown-data",None,None,None,None,None,None),
-	(2,57,"GtkColumnView","cv1",13,None,None,None,None,None)
+	(2,57,"GtkColumnView","cv1",13,None,None,None,None,None),
+	(2,58,"GtkColumnViewColumn","colv-col1",57,None,None,None,None,None),
+	(2,59,"(external)","37",None,None,None,None,None,None),
+	(2,60,"(external)","56",None,None,None,None,None,None),
+	(2,61,"(external)","6",None,None,None,None,None,None),
+	(2,62,"GtkColumnViewColumn","colv-col2",57,None,None,None,1,None),
+	(2,63,"(external)","59",None,None,None,None,None,None),
+	(2,64,"(external)","60",None,None,None,None,None,None),
+	(2,65,"GtkColumnViewColumn","colv-col3",57,None,None,None,2,None),
+	(2,66,"(external)","61",None,None,None,None,None,None),
+	(2,67,"(external)","63",None,None,None,None,None,None),
+	(2,68,"(external)","64",None,None,None,None,None,None)
   </object>
   <object_property>
 	(2,1,"GtkWindow","default-height","600",None,None,None,None,None,None,None,None,None),
@@ -138,7 +149,14 @@
 	(2,53,"GtkLabel","label","List item 3",None,None,None,None,None,None,None,None,None),
 	(2,55,"GtkDropDown","model","56",None,None,None,None,None,None,None,None,None),
 	(2,55,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
-	(2,56,"GtkStringList","strings","Home\nSubway\nOffice",None,None,None,None,None,None,None,None,None)
+	(2,56,"GtkStringList","strings","Home\nSubway\nOffice",None,None,None,None,None,None,None,None,None),
+	(2,57,"GtkColumnView","enable-rubberband","True",None,None,None,None,None,None,None,None,None),
+	(2,58,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),
+	(2,58,"GtkColumnViewColumn","title","Country",None,None,None,None,None,None,None,None,None),
+	(2,62,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),
+	(2,62,"GtkColumnViewColumn","title","Head of State",None,None,None,None,None,None,None,None,None),
+	(2,65,"GtkColumnViewColumn","expand","True",None,None,None,None,None,None,None,None,None),
+	(2,65,"GtkColumnViewColumn","title","Tags",None,None,None,None,None,None,None,None,None)
   </object_property>
   <object_layout_property>
 	(2,8,9,"GtkGridLayoutChild","column","0",None,None,None,None),

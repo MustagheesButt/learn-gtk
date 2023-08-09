@@ -280,6 +280,25 @@
                   <object class="GtkGrid" id="g3">
                     <child>
                       <object class="GtkColumnView" id="cv1">
+                        <property name="enable-rubberband">True</property>
+                        <child>
+                          <object class="GtkColumnViewColumn" id="colv-col1">
+                            <property name="expand">True</property>
+                            <property name="title">Country</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkColumnViewColumn" id="colv-col2">
+                            <property name="expand">True</property>
+                            <property name="title">Head of State</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkColumnViewColumn" id="colv-col3">
+                            <property name="expand">True</property>
+                            <property name="title">Tags</property>
+                          </object>
+                        </child>
                         <layout>
                           <property name="column">0</property>
                           <property name="column-span">3</property>

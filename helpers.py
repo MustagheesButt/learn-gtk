@@ -5,12 +5,13 @@ import os
 class Country(GObject.Object):
     __gtype_name__ = "Country"
 
-    def __init__(self, country_id, country_name, pm):
+    def __init__(self, country_id, country_name, pm, tag):
         super().__init__()
 
         self._country_id = country_id
         self._country_name = country_name
         self._country_pm = pm
+        self._country_tag = tag
 
     @GObject.Property(type=str)
     def country_id(self):
@@ -23,6 +24,10 @@ class Country(GObject.Object):
     @GObject.Property(type=str)
     def country_pm(self):
         return self._country_pm
+    
+    @GObject.Property(type=str)
+    def country_tag(self):
+        return self._country_tag
 
     def __repr__(self):
         return (

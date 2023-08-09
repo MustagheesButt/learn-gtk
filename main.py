@@ -41,22 +41,27 @@ class MyApp(Adw.Application):
         add_media_to_grid(grid, media_files)
 
         colview = builder.get_object("cv1")
-        self.initialize_list(colview)
+        cols = [
+            builder.get_object("colv-col1"),
+            builder.get_object("colv-col2"),
+            builder.get_object("colv-col3")
+        ]
+        self.initialize_list(colview, cols)
     
     # For tree view (now ColumnView)
     # https://discourse.gnome.org/t/gtk4-gtk-listview-python-example/12323
     # https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/817/diffs#eda6bc76b1b349dba139638475451c885330f28f
     # https://github.com/amolenaar/python-gtk4-list-view/blob/main/gtk4_list_view/simple_tree.py
-    def initialize_list(self, columnview):
+    def initialize_list(self, columnview, cols):
         nodes = {
-            "au": ("Austria", "Van der Bellen"),
-            "uk": ("United Kingdom", "Charles III"),
-            "us": ("United States", "Biden"),
+            "au": ("Austria", "Van der Bellen", "europe"),
+            "uk": ("United Kingdom", "Charles III", "europe"),
+            "us": ("United States", "Biden", "NA"),
         }
 
         self.model = Gio.ListStore(item_type=Country)
         for n in nodes.keys():
-            self.model.append(Country(country_id=n, country_name=nodes[n][0], pm=nodes[n][1]))
+            self.model.append(Country(country_id=n, country_name=nodes[n][0], pm=nodes[n][1], tag=nodes[n][2]))
 
         factory = Gtk.SignalListItemFactory()
         factory.connect("setup", self._on_factory_setup)
@@ -70,17 +75,26 @@ class MyApp(Adw.Application):
         factory2.connect("unbind", self._on_factory_unbind, "country_pm")
         factory2.connect("teardown", self._on_factory_teardown)
 
+        factory3 = Gtk.SignalListItemFactory()
+        factory3.connect("setup", self._on_factory_setup)
+        factory3.connect("bind", self._on_factory_bind, "country_tag")
+        factory3.connect("unbind", self._on_factory_unbind, "country_tag")
+        factory3.connect("teardown", self._on_factory_teardown)
+
+        cols[0].set_factory(factory)
+        # col1 = Gtk.ColumnViewColumn(title="Country", factory=factory)
+        # col1.props.expand = True
+        # columnview.append_column(col1)
+
+        cols[1].set_factory(factory2)
+        cols[2].set_factory(factory3)
+
         model=Gtk.NoSelection(model=self.model)
-        self.cv = columnview
-        self.cv.set_model(model)
-        col1 = Gtk.ColumnViewColumn(title="Country", factory=factory)
-        col1.props.expand = True
-        self.cv.append_column(col1)
-        col2 = Gtk.ColumnViewColumn(title="Head of State", factory=factory2)
-        col2.props.expand = True
-        self.cv.append_column(col2)
-        self.cv.props.hexpand = True
-        self.cv.props.vexpand = True
+        columnview.set_model(model)
+
+
+        columnview.props.hexpand = True
+        columnview.props.vexpand = True
 
     def _on_factory_setup(self, factory, list_item):
         cell = Gtk.Inscription()
