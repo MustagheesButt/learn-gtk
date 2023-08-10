@@ -5,13 +5,14 @@ import os
 class FileNode(GObject.Object):
     __gtype_name__ = "Country"
 
-    def __init__(self, id, name, size, is_folder):
+    def __init__(self, id, name, size, is_folder, children_data):
         super().__init__()
 
         self._id = id
         self._name = name
         self._size = size
         self._is_folder = is_folder
+        self._children = children_data
 
     @GObject.Property(type=str)
     def id(self):
@@ -28,6 +29,10 @@ class FileNode(GObject.Object):
     @GObject.Property(type=bool, default=False)
     def is_folder(self):
         return self._is_folder
+    
+    @GObject.Property
+    def children_data(self):
+        return self._children
 
     def __repr__(self):
         return (
