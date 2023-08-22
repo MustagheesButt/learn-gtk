@@ -63,11 +63,11 @@ def get_media_files():
     # exts = [".mkv"]
     found = []
 
-    # for dir in dirs:
-    #     for root, dirs, files in os.walk(dir):
-    #         for file in files:
-    #             if file.endswith(tuple(exts)):
-    #                 found.append(os.path.join(root, file))
+    for dir in dirs:
+        for root, dirs, files in os.walk(dir):
+            for file in files:
+                if file.endswith(tuple(exts)):
+                    found.append(os.path.join(root, file))
 
     return found
 

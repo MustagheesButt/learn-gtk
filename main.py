@@ -6,6 +6,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, Gio, Gdk, GObject
 import os
 import pathlib
+import threading
 
 from helpers import FileNode, get_media_files, add_media_to_grid
 
@@ -41,8 +42,12 @@ class MyApp(Adw.Application):
 
         # Other stuff
         grid = builder.get_object("g2")
-        media_files = get_media_files()
-        add_media_to_grid(grid, media_files)
+
+        def bg_task():
+            media_files = get_media_files()
+            add_media_to_grid(grid, media_files)
+
+        threading.Thread(None, bg_task).start()
 
         colview = builder.get_object("cv1")
         cols = [
